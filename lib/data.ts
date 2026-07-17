@@ -180,7 +180,7 @@ export const education: EducationEntry[] = [
 
 export const stats: StatEntry[] = [
   {
-    value: "₹1,000+ Cr",
+    value: "₹500+ Cr",
     label: "Plant Revenue Audited",
     detail: "Independently covering Revenue, PP&E, Cost of Sales & Trade Payables",
   },
