@@ -31,7 +31,6 @@ export function Footer() {
 
       <div className="container-px flex flex-col gap-2 border-t border-line py-6 text-xs text-ink-faint sm:flex-row sm:items-center sm:justify-between">
         <p className="font-mono">© {year} {profile.name}. All rights reserved.</p>
-        <p className="font-mono">Built with Next.js, TypeScript &amp; Framer Motion</p>
       </div>
     </footer>
   );
