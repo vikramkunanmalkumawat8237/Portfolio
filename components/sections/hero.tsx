@@ -132,7 +132,7 @@ export function Hero() {
             transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="relative mx-auto w-full max-w-sm md:max-w-none"
           >
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-line-strong bg-surface">
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-line-strong bg-surface md:max-h-[480px]">
               <Image
                 src="/profile.png"
                 alt="Portrait of Vikram Kumawat"
