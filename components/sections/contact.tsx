@@ -19,8 +19,11 @@ const schema = z.object({
 
 type FormValues = z.infer<typeof schema>;
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xbdngajv";
+
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
   const {
     register,
     handleSubmit,
@@ -29,14 +32,22 @@ export function Contact() {
   } = useForm<FormValues>({ resolver: zodResolver(schema) });
 
   const onSubmit = async (data: FormValues) => {
-    // No backend wired up yet — opens a pre-filled email client as a reliable fallback.
-    const mailto = `mailto:${profile.email}?subject=${encodeURIComponent(
-      data.subject
-    )}&body=${encodeURIComponent(`${data.message}\n\n— ${data.name} (${data.email})`)}`;
-    window.location.href = mailto;
-    setSubmitted(true);
-    reset();
-    setTimeout(() => setSubmitted(false), 4000);
+    setSubmitError(false);
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) throw new Error("Submission failed");
+
+      setSubmitted(true);
+      reset();
+      setTimeout(() => setSubmitted(false), 4000);
+    } catch {
+      setSubmitError(true);
+    }
   };
 
   return (
@@ -166,7 +177,17 @@ export function Contact() {
                 animate={{ opacity: 1, y: 0 }}
                 className="flex items-center gap-2 text-sm text-emerald"
               >
-                <CheckCircle2 className="h-4 w-4" /> Opening your email client to send this now.
+                <CheckCircle2 className="h-4 w-4" /> Message sent — I'll get back to you soon.
+              </motion.p>
+            )}
+
+            {submitError && (
+              <motion.p
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-sm text-red-400"
+              >
+                Something went wrong. Please email me directly at {profile.email}.
               </motion.p>
             )}
           </form>
