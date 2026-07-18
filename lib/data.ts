@@ -10,13 +10,13 @@ import type {
 export const profile = {
   name: "Vikram Kumawat",
   initials: "VK",
-  headline: "Audit Associate at PwC India",
+  headline: "Audit Intern at PwC India",
   subHeadline: "CA Final Candidate · Finance · AI · Analytics",
   location: "Pune, India",
   email: "vikramkunanmalkumawat@gmail.com",
   phone: "+91 82373 63459",
   heroIntro:
-    "I'm an Audit Associate at PwC India and a CA Final candidate working at the intersection of finance, technology, and problem-solving — auditing large listed entities by day, and building automation and analytics tools that make the numbers move faster.",
+    "I'm an Audit Intern at PwC India and a CA Final candidate working at the intersection of finance, technology, and problem-solving — auditing large listed entities by day, and building automation and analytics tools that make the numbers move faster.",
   aboutStory: [
     "My journey began with Chartered Accountancy, where I built a strong foundation in accounting, auditing, financial reporting, and business analysis. At PwC India, I've worked on statutory audits for large organizations, collaborated across cross-functional teams, and learned how businesses actually operate at scale — not just how they report it.",
     "Alongside finance, I've developed a real interest in technology. I spend time learning Python, SQL, Power BI, and applied AI, because I believe the next generation of finance professionals will be the ones who can combine financial judgment with technical fluency. I build small automation tools on the side and study investment banking, consulting, and quantitative finance in parallel.",
@@ -65,22 +65,23 @@ export const socials: SocialLink[] = [
 export const experience: ExperienceEntry[] = [
   {
     company: "Price Waterhouse Chartered Accountants LLP (PwC India)",
-    role: "Statutory Audit — Articleship",
+    role: "Article Assistant — Auditing and Assurance",
     duration: "Aug 2025 — Present",
     location: "Pune, India",
     blurb:
-      "Independently covering a manufacturing plant with revenue in excess of ₹1,000 crore, end to end.",
+      "Covering statutory and internal control audits across listed, unlisted, and global group-reporting engagements — from Ind AS compliance to government certification mandates.",
     responsibilities: [
-      "Single-handedly cover an individual plant generating ₹1,000+ crore in revenue across Revenue, PP&E, Cost of Sales, and Trade Payables.",
-      "Perform end-to-end audit procedures — risk assessment, control testing, and variance analysis — across Revenue, PP&E, Cost of Sales, Accruals, Payroll, and Trade Payables.",
-      "Ensure compliance with relevant Ind AS and statutes across Inventory Valuation & Provisioning, CARO reporting, Employee Benefit Expenses, and Leases.",
-      "Applied the 5-step Ind AS 115 model to a multi-year software licensing contract — performance obligation identification, SSP allocation, and milestone-based recognition.",
-      "Led Domestic Value Addition (DVA) certification across product categories under the Government of India's PLI scheme for Advanced Automotive Technology products.",
+      "Examined key financial statement areas of a first-year listed client — Cost of Sales, Accounts Payable, Statutory Dues, Payroll, and Lease Receivables — covering ₹760+ crore in aggregate balances under Ind AS.",
+      "Evaluated the design and implementation of internal controls across 3 unlisted client engagements through planning walkthroughs, tailoring substantive procedures around identified control deficiencies.",
+      "Audited Revenue, Cost of Sales, Operating Expenses, Notes Payable, Post-Employment Benefits, and PPE across unlisted engagements, covering an aggregate ₹500+ crore balance under Ind AS and AS.",
+      "Performed statutory audit procedures supporting a Customs Anti-Dumping Duty (ADD) refund claim of ₹10+ lakh — verifying no unjust enrichment, recalculating duty, and testing GL and journal entries.",
+      "Executed specified audit procedures over Accounts Payable and PPE for a Global Fortune 500 industrial manufacturing company, across 59 of 134 global entities (44% coverage).",
     ],
     achievements: [
-      "Programmed a Python script for purchase and tax reconciliation that cut reconciliation time by roughly 75%.",
-      "Built analytical overviews of Unearned Revenue, Statutory Dues, and Payroll for a listed client using Python and Power BI.",
-      "Used ratio, trend, and gross-margin variance analysis across segments to cut substantive testing sample size by ~22% — a leaner, evidence-based approach to diligence work.",
+      "Identified significant control deficiencies at one unlisted engagement and communicated actionable recommendations to client management, earning appreciation from the Manager and Team Member.",
+      "Flagged a critical 75% attrition rate while evaluating payroll processes for a 500+ employee agriculture-sector client, escalating findings to the Engagement Manager for risk assessment.",
+      "Leveraged AI-enabled tools on a DVA Certification (PLI Scheme) engagement for an automotive manufacturer, cutting manual document review effort by ~40% and delivering the certification package within a 2-day turnaround.",
+      "Assisted in validating warranty provisions of ₹25+ crore through policy review, independent recalculation, and substantive testing.",
     ],
     tech: ["Python", "Power BI", "Power Query", "Advanced Excel (VBA, XLOOKUP)", "Ind AS", "CARO"],
   },
@@ -136,9 +137,9 @@ export const certifications: CertificationEntry[] = [
     note: "Applied AI tooling and workflows for modern finance and audit functions.",
   },
   {
-    name: "Excel Skills for Business Specialization",
+    name: "Advanced Excel for Finance",
     issuer: "Macquarie University (28 hrs)",
-    note: "Advanced Excel for financial analysis, modelling, and business decision-making.",
+    note: "Power Query, Power Pivot, VBA automation, XLOOKUP, and dynamic dashboards — applied to audit sampling models and financial data reconciliation at PwC.",
   },
 ];
 
@@ -180,24 +181,24 @@ export const education: EducationEntry[] = [
 
 export const stats: StatEntry[] = [
   {
-    value: "₹500+ Cr",
-    label: "Plant Revenue Audited",
-    detail: "Independently covering Revenue, PP&E, Cost of Sales & Trade Payables",
+    value: "₹760+ Cr",
+    label: "Aggregate Balances Audited",
+    detail: "Cost of Sales, Payables, Statutory Dues, Payroll & Lease Receivables — first-year listed client",
   },
   {
     value: "75%",
-    label: "Reconciliation Time Saved",
-    detail: "Via a self-built Python script for purchase & tax reconciliation",
+    label: "Attrition Rate Flagged",
+    detail: "Identified while evaluating payroll processes for a 500+ employee agriculture-sector client",
   },
   {
-    value: "22%",
-    label: "Smaller Sample Size",
-    detail: "Cut in substantive testing through ratio & variance analysis",
+    value: "~40%",
+    label: "Manual Effort Cut",
+    detail: "Via AI-enabled document review on a DVA Certification engagement under the PLI Scheme",
   },
   {
-    value: "6",
-    label: "Certifications Completed",
-    detail: "Across valuation, financial modelling, derivatives & AI in finance",
+    value: "44%",
+    label: "Global Entity Coverage",
+    detail: "Accounts Payable & PPE procedures across 59 of 134 entities for a Fortune 500 manufacturer",
   },
 ];
 
