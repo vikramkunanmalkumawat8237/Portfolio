@@ -65,7 +65,7 @@ export function Contact() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-ink-muted">
-              Open to full-time roles and conversations across finance, FP&amp;A, audit, and finance-technology.
+              Open to full-time roles and conversations across Finance, Consulting, Investment Banking, and finance-technology where we grow at the better pace.
               Reach out directly — I reply personally, usually within a day.
             </p>
           </Reveal>
