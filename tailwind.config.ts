@@ -15,19 +15,19 @@ const config: Config = {
     },
     extend: {
       colors: {
-        void: "#08090A",
-        surface: "#0E1110",
-        "surface-2": "#141816",
-        line: "#1E2422",
-        "line-strong": "#2A312D",
-        ink: "#F2F4F1",
-        "ink-muted": "#8B938E",
-        "ink-faint": "#5A625D",
+        void: "#FBF1EC",
+        surface: "#F6E4DD",
+        "surface-2": "#F0D9CF",
+        line: "#E0C0B2",
+        "line-strong": "#C99C89",
+        ink: "#1F3A5F",
+        "ink-muted": "#4A6483",
+        "ink-faint": "#7C8FA6",
         emerald: {
           DEFAULT: "#B76E79",
-          dim: "#3D1F23",
-          bright: "#E8A3AD",
-          50: "#FDF2F3",
+          dim: "#F0D9CF",
+          bright: "#C98793",
+          50: "#FBEDE9",
         },
       },
       fontFamily: {
@@ -37,7 +37,7 @@ const config: Config = {
       },
       backgroundImage: {
         "grid-fine":
-          "linear-gradient(to right, rgba(242,244,241,0.035) 1px, transparent 1px), linear-gradient(to bottom, rgba(242,244,241,0.035) 1px, transparent 1px)",
+          "linear-gradient(to right, rgba(31,58,95,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(31,58,95,0.05) 1px, transparent 1px)",
       },
       keyframes: {
         marquee: {

@@ -16,23 +16,23 @@ export default function OGImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          background: "#08090A",
+          background: "#FBF1EC",
           backgroundImage:
-            "linear-gradient(to right, rgba(242,244,241,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(242,244,241,0.06) 1px, transparent 1px)",
+            "linear-gradient(to right, rgba(31,58,95,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(31,58,95,0.06) 1px, transparent 1px)",
           backgroundSize: "48px 48px",
           fontFamily: "sans-serif",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <div style={{ width: 10, height: 10, borderRadius: 999, background: "#13B27F" }} />
-          <span style={{ color: "#13B27F", fontSize: 20, letterSpacing: 4, fontFamily: "monospace" }}>
+          <div style={{ width: 10, height: 10, borderRadius: 999, background: "#B76E79" }} />
+          <span style={{ color: "#B76E79", fontSize: 20, letterSpacing: 4, fontFamily: "monospace" }}>
             ACCT / 001 — AVAILABLE FOR OPPORTUNITIES
           </span>
         </div>
-        <div style={{ display: "flex", fontSize: 88, fontWeight: 700, color: "#F2F4F1", marginTop: 28 }}>
+        <div style={{ display: "flex", fontSize: 88, fontWeight: 700, color: "#1F3A5F", marginTop: 28 }}>
           {profile.name}
         </div>
-        <div style={{ display: "flex", fontSize: 34, color: "#8B938E", marginTop: 16 }}>
+        <div style={{ display: "flex", fontSize: 34, color: "#4A6483", marginTop: 16 }}>
           {profile.headline} · {profile.subHeadline}
         </div>
       </div>
