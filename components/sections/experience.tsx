@@ -63,7 +63,7 @@ export function Experience() {
                   {job.tech.map((t) => (
                     <motion.span
                       key={t}
-                      whileHover={{ y: -2, borderColor: "#B76E79" }}
+                      whileHover={{ y: -2, borderColor: "#13B27F" }}
                       className="rounded-full border border-line-strong px-3 py-1 font-mono text-[11px] text-ink-muted transition-colors"
                     >
                       {t}

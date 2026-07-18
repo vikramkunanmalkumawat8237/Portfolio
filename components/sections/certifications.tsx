@@ -22,7 +22,7 @@ export function Certifications() {
           <motion.div
             key={cert.name}
             variants={revealItem}
-            whileHover={{ y: -4, borderColor: "#B76E79" }}
+            whileHover={{ y: -4, borderColor: "#13B27F" }}
             transition={{ duration: 0.25 }}
             className="flex flex-col justify-between rounded-xl border border-line-strong bg-surface p-6"
           >

@@ -28,7 +28,7 @@ export function Skills() {
                   <motion.span
                     key={item}
                     variants={revealItem}
-                    whileHover={{ scale: 1.06, backgroundColor: "rgba(183,110,121,0.12)", borderColor: "#B76E79", color: "#8B4A54" }}
+                    whileHover={{ scale: 1.06, backgroundColor: "rgba(19,178,127,0.1)", borderColor: "#13B27F", color: "#5EEAB3" }}
                     className="cursor-default rounded-full border border-line-strong bg-surface px-4 py-2 text-sm text-ink transition-colors"
                   >
                     {item}
