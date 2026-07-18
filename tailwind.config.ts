@@ -24,10 +24,10 @@ const config: Config = {
         "ink-muted": "#8B938E",
         "ink-faint": "#5A625D",
         emerald: {
-          DEFAULT: "#13B27F",
-          dim: "#0B3D2C",
-          bright: "#5EEAB3",
-          50: "#EAFBF4",
+          DEFAULT: "#B76E79",
+          dim: "#3D1F23",
+          bright: "#E8A3AD",
+          50: "#FDF2F3",
         },
       },
       fontFamily: {
