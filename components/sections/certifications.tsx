@@ -4,10 +4,12 @@ import { motion } from "framer-motion";
 import { Award } from "lucide-react";
 import { certifications } from "@/lib/data";
 import { Reveal, RevealGroup, revealItem } from "@/components/ui/reveal";
+import { SectionDivider } from "@/components/ui/section-divider";
 
 export function Certifications() {
   return (
-    <section id="certifications" className="section-pad container-px border-t border-line">
+    <section id="certifications" className="section-pad container-px relative">
+      <SectionDivider />
       <Reveal>
         <p className="acct-label mb-4">ACCT / 005 — CERTIFICATIONS</p>
       </Reveal>

@@ -3,10 +3,12 @@
 import { profile } from "@/lib/data";
 import { Reveal, RevealGroup, revealItem } from "@/components/ui/reveal";
 import { motion } from "framer-motion";
+import { SectionDivider } from "@/components/ui/section-divider";
 
 export function About() {
   return (
-    <section id="about" className="section-pad container-px relative border-t border-line">
+    <section id="about" className="section-pad container-px relative">
+      <SectionDivider />
       <Reveal>
         <p className="acct-label mb-4">ACCT / 002 — ABOUT</p>
       </Reveal>

@@ -3,10 +3,12 @@
 import { motion } from "framer-motion";
 import { experience } from "@/lib/data";
 import { Reveal } from "@/components/ui/reveal";
+import { SectionDivider } from "@/components/ui/section-divider";
 
 export function Experience() {
   return (
-    <section id="experience" className="section-pad container-px border-t border-line">
+    <section id="experience" className="section-pad container-px relative">
+      <SectionDivider />
       <Reveal>
         <p className="acct-label mb-4">ACCT / 003 — EXPERIENCE</p>
       </Reveal>

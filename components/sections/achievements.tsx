@@ -4,10 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { stats } from "@/lib/data";
 import { Reveal } from "@/components/ui/reveal";
+import { SectionDivider } from "@/components/ui/section-divider";
 
 function StatValue({ value }: { value: string }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-40px" });
+  const inView = useInView(ref, { once: false, margin: "-40px" });
   const [display, setDisplay] = useState("0");
 
   // Extract the numeric portion so we can count up while preserving prefix/suffix (₹, %, +, Cr, /)
@@ -42,7 +43,8 @@ function StatValue({ value }: { value: string }) {
 
 export function Achievements() {
   return (
-    <section className="section-pad container-px border-t border-line">
+    <section className="section-pad container-px relative">
+      <SectionDivider />
       <Reveal>
         <p className="acct-label mb-4">ACCT / 007 — TRACK RECORD</p>
       </Reveal>
@@ -58,7 +60,7 @@ export function Achievements() {
             key={stat.label}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
+            viewport={{ once: false, margin: "-60px" }}
             transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
             className="ledger-rule pt-6"
           >

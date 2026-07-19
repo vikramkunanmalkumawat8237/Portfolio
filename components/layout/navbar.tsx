@@ -17,11 +17,32 @@ const LINKS = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const sections = LINKS.map((l) => document.querySelector(l.href)).filter(
+      (el): el is Element => Boolean(el)
+    );
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(`#${entry.target.id}`);
+          }
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+    );
+
+    sections.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -40,9 +61,18 @@ export function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="font-mono text-[11px] uppercase tracking-[0.15em] text-ink-muted transition-colors hover:text-emerald"
+                className={`relative font-mono text-[11px] uppercase tracking-[0.15em] transition-colors hover:text-emerald ${
+                  active === link.href ? "text-emerald" : "text-ink-muted"
+                }`}
               >
                 {link.label}
+                {active === link.href && (
+                  <motion.span
+                    layoutId="nav-active-dot"
+                    className="absolute -bottom-2 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-emerald"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
               </a>
             </li>
           ))}

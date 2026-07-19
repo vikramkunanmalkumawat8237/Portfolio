@@ -9,6 +9,7 @@ import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
 import { profile, socials } from "@/lib/data";
 import { Reveal } from "@/components/ui/reveal";
 import { MagneticButton } from "@/components/ui/magnetic-button";
+import { SectionDivider } from "@/components/ui/section-divider";
 
 const schema = z.object({
   name: z.string().min(2, "Please enter your full name"),
@@ -51,7 +52,8 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="section-pad container-px border-t border-line">
+    <section id="contact" className="section-pad container-px relative">
+      <SectionDivider />
       <Reveal>
         <p className="acct-label mb-4">ACCT / 008 — CONTACT</p>
       </Reveal>
@@ -65,7 +67,7 @@ export function Contact() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-ink-muted">
-              Open to full-time roles and conversations across Finance, Consulting, Investment Banking, and finance-technology where we grow at the better pace.
+              Open to full-time roles and conversations across finance, FP&amp;A, audit, and finance-technology.
               Reach out directly — I reply personally, usually within a day.
             </p>
           </Reveal>

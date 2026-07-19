@@ -3,10 +3,12 @@
 import { motion } from "framer-motion";
 import { skills } from "@/lib/data";
 import { Reveal, RevealGroup, revealItem } from "@/components/ui/reveal";
+import { SectionDivider } from "@/components/ui/section-divider";
 
 export function Skills() {
   return (
-    <section id="skills" className="section-pad container-px border-t border-line">
+    <section id="skills" className="section-pad container-px relative">
+      <SectionDivider />
       <Reveal>
         <p className="acct-label mb-4">ACCT / 004 — SKILLS</p>
       </Reveal>
