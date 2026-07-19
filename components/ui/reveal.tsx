@@ -11,24 +11,27 @@ interface RevealProps {
 }
 
 const variants: Variants = {
-  hidden: { opacity: 0, y: 28 },
+  hidden: { opacity: 0, y: 32, scale: 0.97, filter: "blur(6px)" },
   visible: (delay: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] },
+    scale: 1,
+    filter: "blur(0px)",
+    transition: { duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] },
   }),
 };
 
-/** Fades + slides content up once it enters the viewport. */
+/** Fades + slides + softly un-blurs content once it enters the viewport. */
 export function Reveal({ children, delay = 0, className }: RevealProps) {
   return (
     <motion.div
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-80px" }}
+      viewport={{ once: false, margin: "-80px" }}
       custom={delay}
       variants={variants}
+      style={{ willChange: "transform, opacity, filter" }}
     >
       {children}
     </motion.div>
@@ -50,7 +53,7 @@ export function RevealGroup({
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-60px" }}
+      viewport={{ once: false, margin: "-60px" }}
       variants={{
         visible: { transition: { staggerChildren: stagger } },
       }}
@@ -61,6 +64,12 @@ export function RevealGroup({
 }
 
 export const revealItem: Variants = {
-  hidden: { opacity: 0, y: 18 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] } },
+  hidden: { opacity: 0, y: 22, scale: 0.96, filter: "blur(4px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    filter: "blur(0px)",
+    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+  },
 };

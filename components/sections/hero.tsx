@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDown, ArrowUpRight, Copy, Check } from "lucide-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { profile, socials } from "@/lib/data";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { Marquee } from "@/components/ui/marquee";
@@ -21,6 +21,13 @@ const TICKER_ITEMS = [
 
 export function Hero() {
   const [copied, setCopied] = useState(false);
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const imageY = useTransform(scrollYProgress, [0, 1], [0, 90]);
+  const textY = useTransform(scrollYProgress, [0, 1], [0, 40]);
 
   const copyEmail = async () => {
     await navigator.clipboard.writeText(profile.email);
@@ -29,7 +36,7 @@ export function Hero() {
   };
 
   return (
-    <section id="top" className="relative flex min-h-[100svh] flex-col overflow-hidden pt-16 md:pt-20">
+    <section id="top" ref={sectionRef} className="hero-viewport relative flex flex-col overflow-hidden pt-16 md:pt-20">
       {/* Animated ledger-grid background */}
       <div className="pointer-events-none absolute inset-0 grid-fine-bg opacity-60" aria-hidden />
       <motion.div
@@ -48,7 +55,7 @@ export function Hero() {
       <div className="container-px relative z-10 flex flex-1 flex-col justify-center">
         <div className="grid grid-cols-1 items-center gap-14 md:grid-cols-[1.15fr_0.85fr] md:gap-10">
           {/* Text column */}
-          <div>
+          <motion.div style={{ y: textY }}>
             <motion.p
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
@@ -123,13 +130,14 @@ export function Hero() {
                 </a>
               ))}
             </motion.div>
-          </div>
+          </motion.div>
 
           {/* Image column */}
           <motion.div
             initial={{ opacity: 0, scale: 0.94 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            style={{ y: imageY }}
             className="relative mx-auto w-full max-w-sm md:max-w-none"
           >
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-line-strong bg-surface md:max-h-[480px]">

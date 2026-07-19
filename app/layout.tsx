@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/layout/theme-provider";
 import { CustomCursor } from "@/components/layout/cursor";
 import { ScrollProgress } from "@/components/layout/scroll-progress";
 import { BackToTop } from "@/components/layout/back-to-top";
+import { AmbientBackground } from "@/components/layout/ambient-background";
 import { profile } from "@/lib/data";
 
 const display = Fraunces({
@@ -111,7 +112,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </a>
           <ScrollProgress />
           <CustomCursor />
-          <div id="main">{children}</div>
+          <AmbientBackground />
+          <div id="main" className="relative z-10">{children}</div>
           <BackToTop />
         </ThemeProvider>
       </body>
