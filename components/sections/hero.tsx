@@ -37,7 +37,8 @@ export function Hero() {
 
   return (
     <section id="top" ref={sectionRef} className="hero-viewport relative flex flex-col overflow-hidden pt-16 md:pt-20">
-      {/* Animated glow orbs (grid texture now handled by the global ambient background) */}
+      {/* Animated ledger-grid background */}
+      <div className="pointer-events-none absolute inset-0 grid-fine-bg opacity-60" aria-hidden />
       <motion.div
         className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full bg-emerald/10 blur-[140px]"
         animate={{ scale: [1, 1.15, 1], opacity: [0.5, 0.8, 0.5] }}
