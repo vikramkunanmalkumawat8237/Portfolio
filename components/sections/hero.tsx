@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowUpRight, Copy, Check } from "lucide-react";
 import { useState } from "react";
-import { profile, socials } from "@/lib/data";
+import { profile } from "@/lib/data";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { Marquee } from "@/components/ui/marquee";
 
@@ -102,25 +102,6 @@ export function Hero() {
                 {copied ? <Check className="h-3.5 w-3.5 text-emerald" /> : <Copy className="h-3.5 w-3.5" />}
                 {copied ? "Copied" : "Copy Email"}
               </button>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.7, delay: 0.85 }}
-              className="mt-10 flex items-center gap-6"
-            >
-              {socials.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target={s.href.startsWith("http") ? "_blank" : undefined}
-                  rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="font-mono text-[11px] uppercase tracking-[0.15em] text-ink-faint transition-colors hover:text-emerald"
-                >
-                  {s.label}
-                </a>
-              ))}
             </motion.div>
           </motion.div>
 

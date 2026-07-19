@@ -21,7 +21,11 @@ const PARTICLES = [
 export function AmbientBackground() {
   return (
     <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden" aria-hidden>
-      <div className="grid-fine-bg absolute inset-0 opacity-40" />
+      <motion.div
+        className="grid-fine-bg absolute inset-0 opacity-40"
+        animate={{ backgroundPosition: ["0px 0px", "56px 56px"] }}
+        transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+      />
 
       <motion.div
         className="absolute h-[600px] w-[600px] rounded-full bg-emerald/6 blur-[160px]"
